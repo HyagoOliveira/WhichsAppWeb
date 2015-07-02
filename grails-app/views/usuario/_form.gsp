@@ -11,11 +11,11 @@
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'profilePicture', 'error')} ">
-	<label for="profilePicture">
+	<label for="file">
 		<g:message code="usuario.profilePicture.label" default="Profile Picture" />
 		
 	</label>
-	<input type="file" id="profilePicture" name="profilePicture" />
+	<input type="file" id="file" name="file" />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'contatos', 'error')} ">

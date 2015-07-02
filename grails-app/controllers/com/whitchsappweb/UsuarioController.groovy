@@ -3,6 +3,7 @@ package com.whitchsappweb
 import org.springframework.dao.DataIntegrityViolationException
 
 class UsuarioController {
+    def multimidiaService
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
@@ -20,26 +21,11 @@ class UsuarioController {
     }
 
     def save() {
-        def pictureInstance = new Multimidia()
         def usuarioInstance = new Usuario(params)
+        def file = request.getFile('file')
 
-        pictureInstance.type = MultimidiaType.PICTURE
+        usuarioInstance.picture = multimidiaService.save(file)
 
-        println request.getFile(params.profilePicture).inputStream.text
-
-        return
-
-
-        def f = new File(params.profilePicture)
-
-        pictureInstance.data = f
-
-        if (!pictureInstance.save(flush: true)) {
-            render(view: "create", model: [usuarioInstance: usuarioInstance])
-            return
-        }
-
-        usuarioInstance.picture = pictureInstance;
         if (!usuarioInstance.save(flush: true)) {
             render(view: "create", model: [usuarioInstance: usuarioInstance])
             return

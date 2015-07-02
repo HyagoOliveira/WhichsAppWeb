@@ -1,12 +1,17 @@
 package com.whitchsappweb
 
 class Multimidia {
-
-    byte[] data
-    MultimidiaType type
+    String filename
+    String fullPath
+    Date uploadDate = new Date()
 
     static constraints = {
-        //maxSize: 200K
-        data(maxSize:204800, type:'blob')
+        filename(blank:false,nullable:false)
+        fullPath(blank:false,nullable:false)
+    }
+
+    @Override
+    String toString() {
+        return "${filename}, created in: ${uploadDate}"
     }
 }

@@ -60,10 +60,21 @@ grails.exceptionresolver.params.exclude = ['password']
 grails.hibernate.cache.queries = false
 
 environments {
+    rootPath = 'C:/Users/Hyago/IdeaProjects/WhichsAppWeb'
+
     development {
+        uploadAudioFolder = rootPath + '/multimidia/audio/'
+        uploadVideoFolder = rootPath + '/multimidia/video/'
+        uploadPictureFolder = rootPath + '/multimidia/pricture/'
+
+
         grails.logging.jul.usebridge = true
     }
     production {
+        uploadAudioFolder = '/multimidia/audio/'
+        uploadVideoFolder = '/multimidia/video/'
+        uploadPictureFolder = rootPath + '/multimidia/pricture/'
+
         grails.logging.jul.usebridge = false
         // TODO: grails.serverURL = "http://www.changeme.com"
     }

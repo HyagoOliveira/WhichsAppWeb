@@ -32,10 +32,10 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${usuarioInstance?.profilePicture}">
+				<g:if test="${usuarioInstance?.picture}">
 				<li class="fieldcontain">
 					<span id="profilePicture-label" class="property-label"><g:message code="usuario.profilePicture.label" default="Profile Picture" /></span>
-					<img src="${createLink( action:'image', id: params.id)}"/>
+					<img src="${createLink(controller: 'multimidia', action:'download', id: usuarioInstance.picture.id)}"/>
 				</li>
 				</g:if>
 			
