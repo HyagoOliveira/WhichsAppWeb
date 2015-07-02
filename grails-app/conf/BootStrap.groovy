@@ -1,10 +1,11 @@
-class BootStrap {
-    def grailsApplication
+import com.strings.Paths
 
+class BootStrap {
     def init = { servletContext ->
-        Util.checkdir(grailsApplication.config.uploadAudioFolder)
-        Util.checkdir(grailsApplication.config.uploadVideoFolder)
-        Util.checkdir(grailsApplication.config.uploadPictureFolder)
+        Util.checkdir(Paths.uploadAudios)
+        Util.checkdir(Paths.uploadPictures)
+        Util.checkdir(Paths.uploadProfilePictures)
+        Util.checkdir(Paths.uploadVideos)
     }
     def destroy = {
     }

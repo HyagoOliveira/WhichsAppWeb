@@ -3,7 +3,8 @@ package com.whitchsappweb
 public  enum MultimidiaType {
     VIDEO('Video'),
     AUDIO('Audio'),
-    PICTURE('Picture')
+    PICTURE('Picture'),
+    PROFILE_PICTURE('Profile_Picture')
 
     String type
 
@@ -13,6 +14,6 @@ public  enum MultimidiaType {
 
     @Override
     String toString() {
-        return [VIDEO, AUDIO, PICTURE]
+        return [VIDEO, AUDIO, PICTURE, PROFILE_PICTURE]
     }
 }

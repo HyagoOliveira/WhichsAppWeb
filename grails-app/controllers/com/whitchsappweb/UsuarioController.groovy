@@ -1,6 +1,5 @@
 package com.whitchsappweb
 
-import org.springframework.dao.DataIntegrityViolationException
 
 class UsuarioController {
     def multimidiaService
