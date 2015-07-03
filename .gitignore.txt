@@ -1,1 +1,12 @@
 *.idea
+.metadata
+.settings
+Servers/
+*.log
+*~
+*.class
+classes/
+target/
+target-idea/
+~*
+*.bak
